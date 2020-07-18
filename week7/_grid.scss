@@ -1,0 +1,79 @@
+//variables
+$num-columns: 8;
+$one-column: 100% / $num-columns;
+$loop-start: 1;
+$loop-end: $num-columns+1;
+
+@supports (display: grid) {
+
+  //grid mixins
+  @mixin col($num) {
+    grid-column-start: $num;
+    grid-column-end: $num + 1;
+  }
+
+  @mixin row($num) {
+    grid-row-start: $num;
+    grid-row-end: $num + 1;
+  }
+
+  //grid rows
+  .row {
+    display: grid;
+    justify-items: center;
+    height: 100%;
+  }
+
+  @for $index from $loop-start to $loop-end {
+    .col-#{$index} {
+      @include col($index);
+    }
+  }
+
+  @for $index from $loop-start to $loop-end {
+    .row-#{$index} {
+      @include row($index);
+    }
+  }
+}
+
+@supports not (display: grid) {
+
+  //flex mixins
+  @mixin flex($num) {
+    flex: 0 0 $one-column * $num;
+  }
+
+  @mixin offset($num) {
+    margin-left: $one-column * $num;
+  }
+
+  //flex rows
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: space-between;
+    height: 100%;
+  }
+
+  //flex cells
+  .cell {
+    flex: 1;
+    text-align: center;
+  }
+
+  //make column classes
+  @for $index from $loop-start to $loop-end {
+    .flex-#{$index} {
+      @include flex($index);
+    }
+  }
+
+  //make offset classes
+  @for $index from $loop-start to $loop-end {
+    .offset-#{$index} {
+      @include offset($index);
+    }
+  }
+}

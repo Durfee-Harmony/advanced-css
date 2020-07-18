@@ -1,0 +1,153 @@
+/* Table of Contents
+1. Imports & SASS
+  1.1 Color Variables
+  1.3 Mixins
+2. General Styles
+  2.1 Header
+  2.2 Article
+  2.3 Nav & Links
+3. Large Screen Styles
+*/
+
+/* 1. Imports & SASS */
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+/* 1.1 Color Variables */
+$blue: #6495ED;
+$tan: #FAEBD7;
+$orange: #DEB887;
+
+/* 1.2 Mixins */
+@mixin text($decor: none) {
+  text-decoration: $decor;
+}
+
+@mixin padding($pad: 30px) {
+  padding: $pad;
+}
+
+/* 2. General Styles*/
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: Lora;
+}
+
+/* 2.1 Header */
+header {
+  background-color: $blue;
+  @include padding();
+  text-align: right;
+  nav ul {
+    list-style-type: none;
+    li {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+/* 2.2 Article */
+main {
+  background-color: $tan;
+  padding: 1px 15px 1px 20px;
+}
+
+article {
+  background-color: white;
+  @include padding();
+  margin: 30px 0 30px 0;
+  box-shadow: 3px 3px 2px 0px lightgray;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 250px;
+  }
+  .post-date {
+    color: gray;
+  }
+  .post-content h2 {
+    margin: 10px auto 65px auto;
+  }
+}
+
+/* 2.3 Nav & Links */
+header a {
+  color: $tan;
+  @include text();
+  :visited {
+    color: $tan;
+    @include text();
+  }
+  :active {
+    color: $orange;
+  }
+  :hover {
+    color: white;
+    @include text(underline);
+  }
+}
+
+a {
+  color: $blue;
+  @include text();
+  :visited {
+    color: $blue;
+    @include text();
+  }
+  :active {
+    color: $orange;
+  }
+  :hover {
+    @include text(underline);
+  }
+}
+
+article h2 a {
+  color: black;
+  @include text();
+  :visited {
+    color: black;
+    @include text();
+  }
+  :active {
+    color: $orange;
+  }
+  :hover {
+    color: $blue;
+    @include text(underline);
+  }
+}
+
+/* 3. Large Screens Styles */
+@media screen AND (min-width: 700px) {
+  body div {
+    display: flex;
+    align-content: flex-start;
+  }
+
+  header {
+    @include padding(40px);
+    width: 500px;
+    nav ul {
+      @include padding(0px);
+    }
+  }
+
+  main {
+    padding: 1px 80px 1px 80px;
+  }
+
+  article {
+    @include padding(50px);
+    margin: 50px 0 50px 0;
+    figure {
+      margin-bottom: 20px;
+    }
+  }
+
+}

@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+.intro header[role=banner] {
+  font-family: "Kaushan Script", cursive;
+  margin-left: 10vw;
+  padding-top: 5%;
+}
+.intro header[role=banner] h1 {
+  font-size: 200%;
+  margin-bottom: 0;
+}
+.intro header[role=banner] h2 {
+  font-size: 90%;
+  margin-top: 0;
+}
+
+div.summary {
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+aside.sidebar ul {
+  list-style-type: square;
+}
+
+a, a:link {
+  color: #084c61;
+}
+
+a:hover, a:active {
+  color: #32936f;
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  margin-bottom: 10px;
+  margin-left: 5vw;
+}
+
+footer a, footer a:link {
+  background-color: #084c61;
+  color: white;
+  border: 2px solid #084c61;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+footer a:hover, footer a:active {
+  background-color: white;
+  color: #084c61;
+  border: 2px solid #084c61;
+}
+
+@media screen and (max-width: 800px) {
+  body#css-zen-garden {
+    background: rgba(252, 215, 100, 0.4) url("images/tallDragon.png") no-repeat fixed 50%;
+    background-size: 90vw 100vh;
+    width: 90vw;
+    margin: -27px 0 0 0;
+  }
+  body#css-zen-garden div.page-wrapper {
+    background-color: rgba(250, 250, 250, 0.7);
+    width: 100vw;
+    padding-bottom: 3vw;
+  }
+
+  div.main > div,
+div.preamble {
+    background-color: rgba(252, 215, 100, 0.7);
+    border: 3px solid #ab2600;
+    margin: 7.5vw;
+    padding: 6vw;
+  }
+
+  div#zen-requirements.requirements {
+    margin-bottom: 10px;
+  }
+
+  aside.sidebar {
+    background-color: rgba(252, 215, 100, 0.7);
+    border: 3px solid #ab2600;
+    margin: 0 7.5vw;
+    padding: 4.5vw;
+  }
+  aside.sidebar div.wrapper > div {
+    background-color: rgba(250, 250, 250, 0.7);
+    border: 3px solid #ab2600;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  footer a, footer a:link {
+    padding: 10px 20px;
+  }
+}
+@media screen and (min-width: 800px) {
+  body#css-zen-garden {
+    background-color: #fcd764;
+    margin: 0;
+  }
+  body#css-zen-garden div.page-wrapper {
+    background-color: rgba(250, 250, 250, 0.7);
+    padding-bottom: 3vw;
+  }
+
+  section.intro {
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(2, 50%);
+  }
+  section.intro header[role=banner] {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+    background-color: #084c61;
+    color: white;
+    background-image: url("images/mainLogo.png");
+    background-repeat: no-repeat;
+    background-position: 100px 5vh;
+    background-size: 200px;
+    padding-top: 10vh;
+    margin: 0;
+  }
+  section.intro header[role=banner] h1 {
+    margin-left: 350px;
+    font-size: 50px;
+  }
+  section.intro header[role=banner] h2 {
+    margin-left: 400px;
+    font-size: x-large;
+  }
+  section.intro div.summary {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+    min-width: 100%;
+    background-color: #084c61;
+    color: white;
+  }
+  section.intro div.summary p {
+    padding: 10px;
+    margin-left: 400px;
+    width: 300px;
+  }
+  section.intro div.summary a, section.intro div.summary a:link {
+    color: #fd5f00;
+  }
+  section.intro div.summary a:hover, section.intro div.summary a:active {
+    color: #fcd764;
+  }
+  section.intro div.preamble {
+    background-color: rgba(252, 215, 100, 0.7);
+    border: 3px solid #ab2600;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  div.main {
+    display: grid;
+    grid-template-columns: repeat(5, 50%);
+  }
+  div.main div {
+    background-color: rgba(252, 215, 100, 0.7);
+    border: 3px solid #ab2600;
+    margin: 10px;
+    padding: 10px;
+  }
+  div.main div.explanation {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+  }
+  div.main div.participation {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+    background-color: #faefcd;
+    background-image: url("images/leftDragon.png");
+    background-repeat: no-repeat;
+    background-position: 45vw 0px;
+    background-size: contain;
+    overflow: visible;
+    border: none;
+    padding: 0;
+  }
+  div.main div.participation h3 {
+    background-color: rgba(252, 215, 100, 0.7);
+    border-top: 3px solid #ab2600;
+    border-left: 3px solid #ab2600;
+    border-right: 3px solid #ab2600;
+    padding: 30px 10px 10px 10px;
+    margin: 0;
+    max-width: 40%;
+    margin-left: 10px;
+  }
+  div.main div.participation p {
+    background-color: rgba(252, 215, 100, 0.7);
+    border-left: 3px solid #ab2600;
+    border-right: 3px solid #ab2600;
+    padding: 10px;
+    margin: 0;
+    max-width: 40%;
+    margin-left: 10px;
+  }
+  div.main div.participation p:last-of-type {
+    border-bottom: 3px solid #ab2600;
+    padding-bottom: 30px;
+  }
+  div.main div.benefits {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+    background-color: #faefcd;
+    background-image: url("images/rightDragon.png");
+    background-repeat: no-repeat;
+    background-position: 10px 0px;
+    background-size: contain;
+    overflow: visible;
+    border: none;
+    padding: 0;
+  }
+  div.main div.benefits h3 {
+    background-color: rgba(252, 215, 100, 0.7);
+    border-top: 3px solid #ab2600;
+    border-left: 3px solid #ab2600;
+    border-right: 3px solid #ab2600;
+    padding: 30px 10px 10px 10px;
+    margin: 0;
+    max-width: 40%;
+    margin-left: 55%;
+  }
+  div.main div.benefits p {
+    background-color: rgba(252, 215, 100, 0.7);
+    border-left: 3px solid #ab2600;
+    border-right: 3px solid #ab2600;
+    padding: 10px;
+    margin: 0;
+    max-width: 40%;
+    margin-left: 55%;
+  }
+  div.main div.benefits p:last-of-type {
+    border-bottom: 3px solid #ab2600;
+    padding-bottom: 30px;
+  }
+  div.main div.requirements {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-end: 3;
+  }
+  div.main footer {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  aside.sidebar {
+    background: url("images/fire.jpg") no-repeat 50%;
+    background-size: cover;
+    border: 3px solid #ab2600;
+    margin: 0 4.5vw;
+    padding: 1.8vw;
+  }
+  aside.sidebar div.wrapper {
+    display: flex;
+    align-items: stretch;
+    flex-flow: row nowrap;
+    align-content: stretch;
+    justify-content: space-around;
+  }
+  aside.sidebar div.wrapper div {
+    background-color: rgba(250, 250, 250, 0.7);
+    border: 3px solid #ab2600;
+    margin: 10px;
+    padding: 15px;
+  }
+  aside.sidebar div.wrapper div h3 {
+    margin-top: 0;
+  }
+  aside.sidebar div.wrapper div.design-selection {
+    min-width: 30vw;
+  }
+  aside.sidebar div.wrapper div.design-archives {
+    min-width: 15vw;
+  }
+  aside.sidebar div.wrapper div.zen-resources {
+    min-width: 20vw;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

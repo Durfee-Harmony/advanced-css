@@ -1,0 +1,351 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+// Variables
+$max-width: 90vw;
+$box-width: 40vw;
+$max-height: 100vh;
+$section-width: $max-width / 2;
+$header-font: 'Kaushan Script',
+cursive;
+$red: #ab2600;
+$orange: #fd5f00;
+$yellow: #fcd764;
+$green: #32936f;
+$blue: #084c61;
+$border: 3px solid $red;
+
+// Mixins
+@mixin grid($row, $col) {
+  grid-row-start: $row;
+  grid-row-end: $row + 1;
+  grid-column-start: $col;
+  grid-column-end: $col + 1;
+}
+
+@mixin wide($col) {
+  grid-column-end: $col + 2;
+}
+
+// Image Variables
+$main-logo: 'images/mainLogo.png';
+$little-logo: 'images/littleLogo.png';
+$tall-dragon: 'images/tallDragon.png';
+$left-dragon: 'images/leftDragon.png';
+$right-dragon: 'images/rightDragon.png';
+$fire: 'images/fire.jpg';
+
+// General Styles
+.intro header[role="banner"] {
+  font-family: $header-font;
+  margin-left: 10vw;
+  padding-top: 5%;
+
+  h1 {
+    font-size: 200%;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 90%;
+    margin-top: 0;
+  }
+}
+
+div.summary {
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+aside.sidebar ul {
+  list-style-type: square;
+}
+
+// Link Styles
+a, a:link {
+  color: $blue;
+}
+
+a:hover, a:active {
+  color: $green;
+}
+
+// Footer Styles
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: $max-width;
+  margin-bottom: 10px;
+  margin-left: 5vw;
+}
+
+footer a, footer a:link {
+  background-color: $blue;
+  color: white;
+  border: 2px solid $blue;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+footer a:hover, footer a:active {
+  background-color: white;
+  color: $blue;
+  border: 2px solid $blue;
+}
+
+// Small Screen Styles
+@media screen AND (max-width: 800px) {
+  body#css-zen-garden {
+    background: rgba($yellow, 0.4) url($tall-dragon) no-repeat fixed 50%;
+    background-size: $max-width $max-height;
+    width: $max-width;
+    margin: -27px 0 0 0;
+
+    div.page-wrapper {
+      background-color: rgba(250, 250, 250, 0.7);
+      width: 100vw;
+      padding-bottom: 3vw;
+    }
+  }
+
+  div.main>div,
+  div.preamble {
+    background-color: rgba($yellow, 0.7);
+    border: $border;
+    margin: $max-width/12;
+    padding: $max-width/15;
+  }
+
+  div#zen-requirements.requirements {
+    margin-bottom: 10px;
+  }
+
+  aside.sidebar {
+    background-color: rgba($yellow, 0.7);
+    border: $border;
+    margin: 0 $max-width/12;
+    padding: $max-width/20;
+
+    div.wrapper>div {
+      background-color: rgba(250, 250, 250, 0.7);
+      border: $border;
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+
+  footer a, footer a:link {
+    padding: 10px 20px;
+  }
+
+}
+
+// Large Screen Styles
+@media screen AND (min-width: 800px) {
+  body#css-zen-garden {
+    background-color: $yellow;
+    margin: 0;
+
+    div.page-wrapper {
+      background-color: rgba(250, 250, 250, 0.7);
+      padding-bottom: 3vw;
+    }
+  }
+
+  section.intro {
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(2, 50%);
+
+    header[role="banner"] {
+      @include grid(1, 1);
+      @include wide(1);
+      background-color: $blue;
+      color: white;
+      background-image: url($main-logo);
+      background-repeat: no-repeat;
+      background-position: 100px 5vh;
+      background-size: 200px;
+      padding-top: 10vh;
+      margin: 0;
+      h1 {
+        margin-left: 350px;
+        font-size: 50px;
+      }
+      h2 {
+        margin-left: 400px;
+        font-size: x-large;
+      }
+    }
+
+    div.summary {
+      @include grid(2, 1);
+      @include wide(1);
+      min-width: 100%;
+      background-color: $blue;
+      color: white;
+      p {
+        padding: 10px;
+        margin-left: 400px;
+        width: 300px;
+      }
+      a, a:link {
+        color: $orange;
+      }
+      a:hover, a:active {
+        color: $yellow;
+      }
+    }
+
+    div.preamble {
+      background-color: rgba($yellow, 0.7);
+      border: $border;
+      @include grid(3, 1);
+      @include wide(1);
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+
+  div.main {
+    display: grid;
+    grid-template-columns: repeat(5, 50%);
+
+    div {
+      background-color: rgba($yellow, 0.7);
+      border: $border;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    div.explanation {
+      @include grid(1, 1);
+      @include wide(1);
+    }
+
+    div.participation {
+      @include grid(3, 1);
+      @include wide(1);
+      background-color: #faefcd;
+      background-image: url($left-dragon);
+      background-repeat: no-repeat;
+      background-position: 45vw 0px;
+      background-size: contain;
+      overflow: visible;
+      border: none;
+      padding: 0;
+      h3 {
+        background-color: rgba($yellow, 0.7);
+        border-top: 3px solid $red;
+        border-left: 3px solid $red;
+        border-right: 3px solid $red;
+        padding: 30px 10px 10px 10px;
+        margin: 0;
+        max-width: 40%;
+        margin-left: 10px;
+      }
+      p {
+        background-color: rgba($yellow, 0.7);
+        border-left: 3px solid $red;
+        border-right: 3px solid $red;
+        padding: 10px;
+        margin: 0;
+        max-width: 40%;
+        margin-left: 10px;
+      }
+      p:last-of-type {
+        border-bottom: 3px solid $red;
+        padding-bottom: 30px;
+      }
+    }
+
+    div.benefits {
+      @include grid(4, 1);
+      @include wide(1);
+      background-color: #faefcd;
+      background-image: url($right-dragon);
+      background-repeat: no-repeat;
+      background-position: 10px 0px;
+      background-size: contain;
+      overflow: visible;
+      border: none;
+      padding: 0;
+
+      h3 {
+        background-color: rgba($yellow, 0.7);
+        border-top: 3px solid $red;
+        border-left: 3px solid $red;
+        border-right: 3px solid $red;
+        padding: 30px 10px 10px 10px;
+        margin: 0;
+        max-width: 40%;
+        margin-left: 55%;
+      }
+
+      p {
+        background-color: rgba($yellow, 0.7);
+        border-left: 3px solid $red;
+        border-right: 3px solid $red;
+        padding: 10px;
+        margin: 0;
+        max-width: 40%;
+        margin-left: 55%;
+      }
+
+      p:last-of-type {
+        border-bottom: 3px solid $red;
+        padding-bottom: 30px;
+      }
+    }
+
+    div.requirements {
+      @include grid(5, 1);
+      @include wide(1);
+    }
+
+    footer {
+      @include grid(6, 1)
+    }
+  }
+
+  aside.sidebar {
+    background: url($fire) no-repeat 50%;
+    background-size: cover;
+    border: $border;
+    margin: 0 $max-width/20;
+    padding: $max-width/50;
+
+    div.wrapper {
+      display: flex;
+      align-items: stretch;
+      flex-flow: row nowrap;
+      align-content: stretch;
+      justify-content: space-around;
+
+      div {
+        background-color: rgba(250, 250, 250, 0.7);
+        border: $border;
+        margin: 10px;
+        padding: 15px;
+        h3 {
+          margin-top: 0;
+        }
+      }
+      div.design-selection {
+        min-width: 30vw;
+      }
+      div.design-archives {
+        min-width: 15vw;;
+      }
+      div.zen-resources {
+        min-width: 20vw;
+      }
+    }
+  }
+}
